@@ -48,7 +48,7 @@ public class Utils {
     }
 
     /** The string that prefixes all text messages signed using Bitcoin keys. */
-    public static final String BITCOIN_SIGNED_MESSAGE_HEADER = "Bitcoin Signed Message:\n";
+    public static final String BITCOIN_SIGNED_MESSAGE_HEADER = "Anoncoin Signed Message:\n";
 
     // TODO: Replace this nanocoins business with something better.
 

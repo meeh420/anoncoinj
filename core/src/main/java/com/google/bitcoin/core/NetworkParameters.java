@@ -40,7 +40,7 @@ public class NetworkParameters implements Serializable {
     /**
      * The protocol version this library implements.
      */
-    public static final int PROTOCOL_VERSION = 60001;
+    public static final int PROTOCOL_VERSION = 70001;
 
     /**
      * The alert signing key originally owned by Satoshi, and now passed on to Gavin along with a few others.
@@ -142,21 +142,21 @@ public class NetworkParameters implements Serializable {
             interval = INTERVAL;
             targetTimespan = TARGET_TIMESPAN;
             proofOfWorkLimit = Utils.decodeCompactBits(0x1e0fffffL);
-            acceptableAddressCodes = new int[] { 48 };
+            acceptableAddressCodes = new int[] { 23 };
             dumpedPrivateKeyHeader = 128;
-            addressHeader = 48;
-            port = 9333;
-            packetMagic = 0xfbc0b6db;
+            addressHeader = 23;
+            port = 9377;
+            packetMagic = 0xfacabada;
             genesisBlock.setDifficultyTarget(0x1e0ffff0L);
             genesisBlock.setTime(1317972665L);
             genesisBlock.setNonce(2084524493L);
-            genesisBlock.setMerkleRoot(new Sha256Hash("97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+            genesisBlock.setMerkleRoot(new Sha256Hash("7ce7004d764515f9b43cb9f07547c8e2e00d94c9348b3da33c8681d350f2c736"));
             id = ID_PRODNET;
             subsidyDecreaseBlockCount = 840000;
             allowEmptyPeerChains = false;
             spendableCoinbaseDepth = 100;
             String genesisHash = genesisBlock.getHashAsString();
-            checkState(genesisHash.equals("12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"),
+            checkState(genesisHash.equals("2c85519db50a40c033ccb3d4cb729414016afa537c66537f7d3d52dcd1d484a3"),
                     genesisHash);
 
             // This contains (at a minimum) the blocks which are not BIP30 compliant. BIP30 changed how duplicate
@@ -173,11 +173,11 @@ public class NetworkParameters implements Serializable {
             genesisBlock = createTestGenesis(this);
             id = ID_TESTNET;
             // Genesis hash is 000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943
-            packetMagic = 0xfcc1b7dc;
+            packetMagic = 0xfacaa74a;
             interval = INTERVAL;
             targetTimespan = TARGET_TIMESPAN;
             proofOfWorkLimit = Utils.decodeCompactBits(0x1d00ffffL);
-            port = 19333;
+            port = 19377;
             addressHeader = 111;
             acceptableAddressCodes = new int[] { 111 };
             dumpedPrivateKeyHeader = 239;
@@ -278,8 +278,8 @@ public class NetworkParameters implements Serializable {
         return genesisBlock;
     }
 
-    public static final int TARGET_TIMESPAN = (int)(3.5 * 24 * 60 * 60);  // 3.5 days per difficulty cycle, on average.
-    public static final int TARGET_SPACING = (int)(2.5 * 60);  // 2.5 minutes per block.
+    public static final int TARGET_TIMESPAN = (int)86184;  // 420 per difficulty cycle, on average.
+    public static final int TARGET_SPACING = (int)205;  // 3.42 minutes per block.
     public static final int INTERVAL = TARGET_TIMESPAN / TARGET_SPACING;
     
     /**
@@ -292,7 +292,7 @@ public class NetworkParameters implements Serializable {
     /**
      * The maximum money to be generated
      */
-    public static final BigInteger MAX_MONEY = new BigInteger("84000000", 10).multiply(COIN);
+    public static final BigInteger MAX_MONEY = new BigInteger("4200000", 10).multiply(COIN);
 
     /** Returns whatever the latest testNet parameters are.  Use this rather than the versioned equivalents. */
     public static NetworkParameters testNet() {

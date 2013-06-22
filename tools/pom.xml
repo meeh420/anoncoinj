@@ -20,16 +20,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>com.google</groupId>
-    <artifactId>bitcoinj-parent</artifactId>
+    <artifactId>anoncoinj-parent</artifactId>
     <version>0.8-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.google</groupId>
-  <artifactId>litecoinj-tools</artifactId>
+  <artifactId>anoncoinj-tools</artifactId>
 
-  <name>litecoinj Tools</name>
-  <description>A collection of useful tools that use the bitcoinj library to perform wallet operations</description>
+  <name>anoncoinj Tools</name>
+  <description>A collection of useful tools that use the anoncoinj library to perform wallet operations</description>
 
   <build>
       <plugins>
@@ -72,7 +72,7 @@
   <dependencies>
     <dependency>
       <groupId>com.google</groupId>
-      <artifactId>bitcoinj</artifactId>
+      <artifactId>anoncoinj</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
     <dependency>

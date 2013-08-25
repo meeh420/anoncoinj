@@ -9,12 +9,12 @@
 
   <modules>
     <module>core</module>
-    <module>examples</module>
+<!--    <module>examples</module> -->
     <module>tools</module>
   </modules>
 
   <name>anoncoinj Parent</name>
-  <description>Provides the common configuration for the BitCoinJ modules</description>
+  <description>Provides the common configuration for the AnoncoinJ modules</description>
   <url>http://code.google.com/p/bitcoinj</url>
 
   <ciManagement>
@@ -33,6 +33,10 @@
   <!-- Committers -->
   <developers>
     <!-- Information already public -->
+    <developer>
+      <name>Erik Gregg</name>
+      <email>ralree@gmail.com</email>
+    </developer>
     <developer>
       <name>Mike Hearn</name>
       <email>hearn@google.com</email>
@@ -98,18 +102,18 @@
 
   <issueManagement>
     <system>Google Code</system>
-    <url>http://code.google.com/p/bitcoinj/issues/list</url>
+    <url>http://code.google.com/p/litecoinj/issues/list</url>
   </issueManagement>
 
   <mailingLists>
     <mailingList>
-      <name>bitcoinj Google Group</name>
-      <post>https://groups.google.com/forum/#!forum/bitcoinj</post>
+      <name>litecoinj Google Group</name>
+      <post>https://groups.google.com/forum/#!forum/litecoinj</post>
     </mailingList>
   </mailingLists>
 
   <scm>
-    <url>http://code.google.com/p/bitcoinj/source/checkout</url>
+    <url>http://code.google.com/p/litecoinj/source/checkout</url>
   </scm>
 
   <!-- Common build plugin configuration -->
@@ -152,7 +156,7 @@
         <artifactId>slf4j-api</artifactId>
         <version>${slf4j.version}</version>
       </dependency>
-      <!-- bitcoinj consumers are expected to provide their own SLF4J adapters
+      <!-- litecoinj consumers are expected to provide their own SLF4J adapters
     such as logback, slf4j-log4j12, slf4j-jcl and so on
     see http://www.slf4j.org/faq.html -->
       <dependency>

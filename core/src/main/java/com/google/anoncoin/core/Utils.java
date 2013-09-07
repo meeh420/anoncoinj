@@ -46,7 +46,7 @@ public class Utils {
     }
 
     /** The string that prefixes all text messages signed using Bitcoin keys. */
-    public static final String BITCOIN_SIGNED_MESSAGE_HEADER = "Anoncoin Signed Message:\n";
+    public static final String ANONCOIN_SIGNED_MESSAGE_HEADER = "Anoncoin Signed Message:\n";
 
     // TODO: Replace this nanocoins business with something better.
 
@@ -482,11 +482,11 @@ public class Utils {
      */
     public static byte[] formatMessageForSigning(String message) {
         VarInt size = new VarInt(message.length());
-        int totalSize = 1 + LITECOIN_SIGNED_MESSAGE_HEADER.length() + size.getSizeInBytes() + message.length();
+        int totalSize = 1 + ANONCOIN_SIGNED_MESSAGE_HEADER.length() + size.getSizeInBytes() + message.length();
         byte[] result = new byte[totalSize];
         int cursor = 0;
-        result[cursor++] = (byte) LITECOIN_SIGNED_MESSAGE_HEADER.length();
-        byte[] bytes = LITECOIN_SIGNED_MESSAGE_HEADER.getBytes(Charset.forName("UTF-8"));
+        result[cursor++] = (byte) ANONCOIN_SIGNED_MESSAGE_HEADER.length();
+        byte[] bytes = ANONCOIN_SIGNED_MESSAGE_HEADER.getBytes(Charset.forName("UTF-8"));
         System.arraycopy(bytes, 0, result, cursor, bytes.length);
         cursor += bytes.length;
         bytes = size.encode();

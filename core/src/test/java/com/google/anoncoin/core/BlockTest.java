@@ -122,7 +122,7 @@ public class BlockTest {
         // We have to be able to reserialize everything exactly as we found it for hashing to work. This test also
         // proves that transaction serialization works, along with all its subobjects like scripts and in/outpoints.
         //
-        // NB: This tests the LITECOIN proprietary serialization protocol. A different test checks Java serialization
+        // NB: This tests the ANONCOIN proprietary serialization protocol. A different test checks Java serialization
         // of transactions.
         Block block = new Block(params, blockBytes);
         assertTrue(Arrays.equals(blockBytes, block.anoncoinSerialize()));

@@ -73,9 +73,9 @@ public class VersionMessage extends Message {
     public boolean relayTxesBeforeFilter;
 
     /** The version of this library release, as a string. */
-    public static final String LITECOINJ_VERSION = "0.8-SNAPSHOT";
+    public static final String ANONCOINJ_VERSION = "0.8-SNAPSHOT";
     /** The value that is prepended to the subVer field of this application. */
-    public static final String LIBRARY_SUBVER = "/AnoncoinJ:" + LITECOINJ_VERSION + "/";
+    public static final String LIBRARY_SUBVER = "/AnoncoinJ:" + ANONCOINJ_VERSION + "/";
 
     public VersionMessage(NetworkParameters params, byte[] msg) throws ProtocolException {
         super(params, msg, 0);

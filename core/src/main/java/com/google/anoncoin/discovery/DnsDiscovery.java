@@ -52,9 +52,8 @@ public class DnsDiscovery implements PeerDiscovery {
     private NetworkParameters netParams;
 
     public static final String[] defaultHosts = new String[]{
-            "dnsseed.anoncoinpool.org",
-            "dnsseed.bytesized-vps.com",
-            "dnsseed.ltc.xurious.com",
+            "dnsseed01.anoncoin.net",
+            "anoncoin.dnsseed.coinpool.in",
     };
 
     /**

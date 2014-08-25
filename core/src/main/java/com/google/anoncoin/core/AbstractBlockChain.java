@@ -355,7 +355,7 @@ public abstract class AbstractBlockChain {
                 //
                 // Create a new StoredBlock from this block. It will throw away the transaction data so when block goes
                 // out of scope we will reclaim the used memory.
-                checkDifficultyTransitions(storedPrev, block);
+                //checkDifficultyTransitions(storedPrev, block);
                 connectBlock(block, storedPrev, shouldVerifyTransactions(), filteredTxHashList, filteredTxn);
             }
 
@@ -708,14 +708,6 @@ public abstract class AbstractBlockChain {
         
         // Is this supposed to be a difficulty transition point?
         if ((storedPrev.getHeight() + 1) % params.interval != 0) {
-
-            // TODO: Refactor this hack after 0.5 is released and we stop supporting deserialization compatibility.
-            // This should be a method of the NetworkParameters, which should in turn be using singletons and a subclass
-            // for each network type. Then each network can define its own difficulty transition rules.
-            if (params.getId().equals(NetworkParameters.ID_TESTNET) && nextBlock.getTime().after(testnetDiffDate)) {
-                checkTestnetDifficulty(storedPrev, prev, nextBlock);
-                return;
-            }
 
             // No ... so check the difficulty didn't actually change.
             if (nextBlock.getDifficultyTarget() != prev.getDifficultyTarget())
